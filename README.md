@@ -26,7 +26,7 @@ Below are instructions to run it in qemu.
 
 This should load up the screen below
 
-    [image]
+![screenshot](images/recording.png)
 
 If this loads as seen above, you have just run a simple os kernel created by an AI Model!
 
