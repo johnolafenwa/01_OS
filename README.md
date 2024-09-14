@@ -119,6 +119,7 @@ Step 4. Run it with qemu
 
     qemu-system-i386 -cdrom 01_OS.iso
 
+To navigate out of the qemu emulator, simply run `ctrl - alt - G`
 
 
 

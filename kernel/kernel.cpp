@@ -1,19 +1,17 @@
-// kernel.cpp
-extern "C" void kernel_main() {
-    const char *str = "Hello, World! This is an OS Kernel, created with help from OpenAI O1-Preview";
+void print_string(const char* str) {
     char *video_memory = (char *)0xb8000;
     int i = 0;
 
-    // Each character cell consists of the character and its attribute byte
     while (str[i] != '\0') {
-        video_memory[i * 2] = str[i];       // Character
-        video_memory[i * 2 + 1] = 0x07;     // Attribute byte (white on black)
+        video_memory[i * 2] = str[i];
+        video_memory[i * 2 + 1] = 0x07;
         i++;
     }
+}
 
-    // Infinite loop to prevent the kernel from exiting
+extern "C" void kernel_main() {
+    print_string("----O1-OS--- Created by OpenAI O1 Reasoning Model----");
     while (1) {
         asm volatile ("hlt");
     }
 }
-
