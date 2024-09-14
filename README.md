@@ -11,7 +11,7 @@ The original conversation with 01 Preview that created all the code in this repo
 You can test the kernel in the qemu emulator, virtual machine or burn it into a USB stick and boot it on a physical computer.
 Below are instructions to run it in qemu.
 
-1. Download the pre-built iso file here {LINK}
+1. Download the pre-built iso file here [LINK](https://github.com/johnolafenwa/01_OS/releases/download/v1/01_OS.iso)
 
 2. If you don't have qemu installed on your linux machine, run the following command to download it.
 
