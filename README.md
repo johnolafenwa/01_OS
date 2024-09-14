@@ -54,13 +54,14 @@ The instructions below assumes you are running Linux.
 
 1. Download GCC and Binutils Sources
    
-    mkdir ~/opt
+    `mkdir ~/opt
     cd ~/opt
     wget https://ftp.gnu.org/gnu/binutils/binutils-2.38.tar.gz
     wget https://ftp.gnu.org/gnu/gcc/gcc-11.2.0/gcc-11.2.0.tar.gz
 
     tar -xzf binutils-2.38.tar.gz
     tar -xzf gcc-11.2.0.tar.gz
+    `
 
 2. Build and Install Binutils
 
