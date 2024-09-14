@@ -52,18 +52,17 @@ The instructions below assumes you are running Linux.
 
 ## Setup the Cross Compiler to avoid conflict with system binaries
 
-1. Download GCC and Binutils Sources
+Step 1. Download GCC and Binutils Sources
    
-    `mkdir ~/opt
+    mkdir ~/opt
     cd ~/opt
     wget https://ftp.gnu.org/gnu/binutils/binutils-2.38.tar.gz
     wget https://ftp.gnu.org/gnu/gcc/gcc-11.2.0/gcc-11.2.0.tar.gz
 
     tar -xzf binutils-2.38.tar.gz
     tar -xzf gcc-11.2.0.tar.gz
-    `
 
-2. Build and Install Binutils
+Step 2. Build and Install Binutils
 
     mkdir build-binutils
     cd build-binutils
@@ -73,7 +72,7 @@ The instructions below assumes you are running Linux.
     make install
     cd ..
 
-3. Build and Install GCC
+Step 3. Build and Install GCC
     
     mkdir build-gcc
     cd build-gcc
@@ -85,12 +84,12 @@ The instructions below assumes you are running Linux.
     make install-target-libgcc
     cd ..
 
-4. Update Your Path
+Step 4. Update Your Path
 
     echo 'export PATH="$HOME/opt/cross/bin:$PATH"' >> ~/.bashrc
     source ~/.bashrc
 
-5. Verify the cross compiler is installed
+Step 5. Verify the cross compiler is installed
 
     i686-elf-gcc --version
 
@@ -99,24 +98,24 @@ The instructions below assumes you are running Linux.
 ## Build to Kernel
 
 
-1. Run make
+Step 1. Run make
 
     make clean
     make
 
 The above will produce kernel.bin
 
-2. Copy the bin file
+Step 2. Copy the bin file
 
     cp kernel.bin isodir/boot/kernel.bin
 
-3. Create the OS .iso file
+Step 3. Create the OS .iso file
 
     grub-mkrescue -o 01_OS.iso isodir
 
 Now, you should see 01_OS.iso in the isodir, you can boot the OS with these file, burn it to a disk and load it onto a physical machine, or you can load it in a VM
 
-4. Run it with qemu
+Step 4. Run it with qemu
 
     qemu-system-i386 -cdrom 01_OS.iso
 
