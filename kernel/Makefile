@@ -1,10 +1,11 @@
 # Makefile
+
 CROSS_COMPILER=i686-elf-
 AS=$(CROSS_COMPILER)as
 CC=$(CROSS_COMPILER)gcc
 LD=$(CROSS_COMPILER)ld
 
-CFLAGS=-std=c++17 -ffreestanding -O2 -Wall -Wextra
+CFLAGS=-std=c++17 -ffreestanding -O2 -Wall -Wextra -fno-exceptions -fno-rtti
 LDFLAGS=-T linker.ld -nostdlib
 
 all: kernel.bin
@@ -20,5 +21,3 @@ kernel.o: kernel.cpp
 
 clean:
 	rm -f *.o kernel.bin
-
-
